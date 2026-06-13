@@ -1,39 +1,39 @@
-# Simulasi Kuantum 1D (Quantum Tunneling & Scattering)
+# 1D Quantum Simulation (Quantum Tunneling & Scattering)
 
-Repositori ini berisi simulasi numerik persamaan Schrödinger bergantung waktu (TDSE) dalam 1 dimensi untuk memodelkan perambatan paket gelombang kuantum (Gaussian wave packet) yang menabrak penghalang potensial (Gaussian potential barrier).
+This repository contains a numerical simulation of the 1D Time-Dependent Schrödinger Equation (TDSE) modeling the propagation of a Gaussian quantum wave packet scattering off a potential barrier.
 
-Simulasi ini diselesaikan menggunakan metode **Split-Step Fourier (SSFM)** yang sangat stabil dan akurat.
+The simulation is solved using the highly stable and accurate **Split-Step Fourier Method (SSFM)**.
 
-## Fitur Utama
-- **Animasi Live (GUI Mode)**: Jika dijalankan di komputer lokal (Mac/PC), simulasi akan menampilkan visualisasi pergerakan gelombang secara real-time.
-- **Headless Mode**: Jika dijalankan di server atau latar belakang, script otomatis mendeteksi ketiadaan GUI dan langsung menyimpan grafik hasil simulasi ke bentuk gambar.
-- **Visualisasi Ilmiah**: Menghasilkan 2 jenis plot grafik presisi tinggi.
-
----
-
-## Hasil Grafik Simulasi
-
-### 1. Peta Evolusi Ruang-Waktu (Space-Time Evolution)
-Menampilkan seluruh proses perambatan dan hamburan gelombang kuantum secara kontinu seiring waktu:
-![Peta Evolusi Ruang-Waktu](quantum_space_time.png)
-
-### 2. Keadaan Akhir (Final State)
-Menampilkan bentuk paket gelombang (keadaan probabilitas $|\Psi(x)|^2$ dan bagian riil $\text{Re}(\Psi)$) setelah menabrak penghalang potensial:
-![Keadaan Akhir](quantum_simulation.png)
+## Key Features
+- **Live Animation (GUI Mode)**: When run on a local machine, the simulation displays a real-time visualization of the wave packet's dynamics.
+- **Headless Mode**: If run in a headless environment, the script automatically detects the absence of a GUI and saves the simulation plots directly to disk.
+- **Scientific Visualization**: Generates two types of high-precision publication-quality plots.
 
 ---
 
-## Cara Menjalankan
+## Simulation Results
 
-### 1. Install Dependensi
-Pastikan Anda memiliki pustaka Python yang dibutuhkan:
+### 1. Space-Time Evolution (3D Surface Plot)
+Displays the complete time evolution of the wave packet, showing its propagation, reflection, and quantum tunneling:
+![Space-Time Evolution](quantum_space_time.png)
+
+### 2. Final State Plot
+Displays the probability density $|\Psi(x)|^2$ and the real part $\text{Re}(\Psi)$ at the final time step:
+![Final State](quantum_simulation.png)
+
+---
+
+## Getting Started
+
+### 1. Install Dependencies
+Ensure you have the required Python libraries installed:
 ```bash
 pip install numpy matplotlib scipy
 ```
 
-### 2. Jalankan Script
-Jalankan perintah berikut di terminal Anda untuk melihat animasi live:
+### 2. Run the Script
+Run the following command in your terminal to view the live animation:
 ```bash
 python3 quantum_simulation.py
 ```
-*(Tutup jendela grafis untuk menyelesaikan simulasi dan menyimpan gambar).*
+*(Close the graphics window to finish the simulation and save the plots).*

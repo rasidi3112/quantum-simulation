@@ -16,7 +16,7 @@ from mpl_toolkits.mplot3d import Axes3D
 from scipy.fft import fft, ifft
 import time
 
-# Set professional serif font style (looks like LaTeX/scientific publication)
+
 plt.rcParams['font.family'] = 'serif'
 plt.rcParams['mathtext.fontset'] = 'dejavuserif'
 
@@ -147,7 +147,7 @@ else:
     plt.close(fig)
     print(f"Saved final state plot to '{output_image}'.")
 
-# --- Generate 3D Space-Time Surface Plot ---
+
 plt.style.use('default')
 fig_3d = plt.figure(figsize=(11, 8))
 fig_3d.patch.set_facecolor('white')
@@ -162,10 +162,10 @@ st_cropped = space_time_data[:, indices]
 t_arr = np.linspace(0, num_steps * dt, num_steps + 1)
 X, T_grid = np.meshgrid(x_cropped, t_arr)
 
-# Plot surface with standard scientific colormap (viridis)
+
 surf = ax_3d.plot_surface(X, T_grid, st_cropped, cmap='viridis', linewidth=0, antialiased=True, alpha=0.95)
 
-# Style 3D grid and panes to be clean white/light gray
+
 ax_3d.xaxis.pane.fill = False
 ax_3d.yaxis.pane.fill = False
 ax_3d.zaxis.pane.fill = False
@@ -178,7 +178,7 @@ ax_3d.set_ylabel("Time (seconds)", fontsize=10, labelpad=10)
 ax_3d.set_zlabel(r"Probability Density $|\Psi(x, t)|^2$", fontsize=10, labelpad=10)
 ax_3d.set_title("Quantum Wave Packet Space-Time Evolution (3D Surface)", fontsize=12, fontweight='bold', pad=15)
 
-# View angle adjustment for clear perspective of the barrier collision
+
 ax_3d.view_init(elev=32, azim=-62)
 
 cbar = fig_3d.colorbar(surf, ax=ax_3d, shrink=0.5, aspect=10, pad=0.1)
