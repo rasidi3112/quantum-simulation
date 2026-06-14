@@ -1,0 +1,37 @@
+# QuantumLab Default Configuration
+
+units: atomic
+
+grid:
+  N: 512
+  x_min: -20.0
+  x_max: 20.0
+
+wavefunction:
+  type: gaussian
+  x0: -5.0
+  k0: 3.0
+  sigma: 1.0
+
+potential:
+  type: barrier
+  V0: 5.0
+  width: 1.0
+  position: 0.0
+
+solver:
+  dt: 0.01
+  t_max: 10.0
+  absorbing_boundary: false
+
+visualization:
+  style: scientific
+  live_plot: true
+  save_plots: true
+  save_animation: false
+  theme: dark
+
+export:
+  enabled: false
+  format: csv
+  output_dir: output
