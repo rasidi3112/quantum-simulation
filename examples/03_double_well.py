@@ -1,7 +1,3 @@
-"""
-Example 03: 1D Wave packet tunneling oscillations in a Double Well potential.
-Demonstrates quantum tunneling and probability oscillation between symmetric wells.
-"""
 import os
 import numpy as np
 from quantumlab.core.grid import Grid1D
@@ -16,85 +12,46 @@ def main():
     L = 30.0
     N = 512
     dt = 0.05
-    num_steps = 1500  # Total time = 75.0 seconds
-
-    # Double well parameters (minima at x = +/- 3.0, central barrier V0 = 3.0)
+    num_steps = 1500
     V0 = 3.0
     barrier_distance = 3.0
-
-    # Initial packet localized in the left well (x0 = -3.0) with zero momentum
     x0 = -3.0
     k0 = 0.0
-    sigma = 0.7  # Narrow enough to fit in the left well
-
-    # Ensure output directory exists
-    os.makedirs("output", exist_ok=True)
-
-    print("--- Example 03: Quantum Double Well Tunneling ---")
-    print("Initializing grid and wave function...")
-    grid = Grid1D(N, -L/2, L/2)
+    sigma = 0.7
+    os.makedirs('output', exist_ok=True)
+    print('--- Example 03: Quantum Double Well Tunneling ---')
+    print('Initializing grid and wave function...')
+    grid = Grid1D(N, -L / 2, L / 2)
     wf = WaveFunction1D.gaussian(grid, x0, k0, sigma)
-
-    print("Setting up Double Well potential (quartic) and solver...")
+    print('Setting up Double Well potential (quartic) and solver...')
     potential = DoubleWell(V0, barrier_distance)
     solver = SplitStep1DSolver(grid, potential, dt, hbar=1.0, m=1.0)
-
-    # Logging structures
     space_time = np.zeros((num_steps + 1, N))
     space_time[0, :] = wf.probability_density
-
     times = [0.0]
     positions = [position_expectation(wf)]
-
-    print(f"Running simulation for {num_steps} steps (T_max = {num_steps * dt:.1f}s)...")
+    print(f'Running simulation for {num_steps} steps (T_max = {num_steps * dt:.1f}s)...')
     wf_current = wf
     for step in range(1, num_steps + 1):
         wf_current = solver.step(wf_current)
         space_time[step, :] = wf_current.probability_density
-
         t = step * dt
         x_mean = position_expectation(wf_current)
-
         times.append(t)
         positions.append(x_mean)
-
         if step % 300 == 0:
             energy = total_energy_expectation(wf_current, potential, hbar=1.0, m=1.0)
-            print(f"  Step {step}/{num_steps}: Time={t:.1f}s, ⟨x⟩={x_mean:.4f}, Energy={energy:.6f}")
-
-    print("\nSimulation complete. Plotting results...")
-
-    # 1. Final state plot
-    plot_wavefunction_1d(
-        wf_current,
-        potential=potential,
-        title="Double Well Tunneling (Final State)",
-        save_path="output/03_double_well_final.png",
-        show=False,
-        theme="light"
-    )
-
-    # 2. 3D space-time plot showing tunneling oscillations
+            print(f'  Step {step}/{num_steps}: Time={t:.1f}s, ⟨x⟩={x_mean:.4f}, Energy={energy:.6f}')
+    print('\nSimulation complete. Plotting results...')
+    plot_wavefunction_1d(wf_current, potential=potential, title='Double Well Tunneling (Final State)', save_path='output/03_double_well_final.png', show=False, theme='light')
     t_arr = np.array(times)
-    plot_space_time_3d(
-        grid,
-        t_arr,
-        space_time,
-        x_range=(-8, 8),
-        title="Quantum Double Well Space-Time Evolution (3D)",
-        save_path="output/03_double_well_spacetime.png",
-        show=False,
-        theme="light"
-    )
-
-    # Report oscillation details
+    plot_space_time_3d(grid, t_arr, space_time, x_range=(-8, 8), title='Quantum Double Well Space-Time Evolution (3D)', save_path='output/03_double_well_spacetime.png', show=False, theme='light')
     pos_arr = np.array(positions)
     num_crossings = np.sum((pos_arr[:-1] < 0) & (pos_arr[1:] >= 0)) + np.sum((pos_arr[:-1] > 0) & (pos_arr[1:] <= 0))
-    print(f"Tunneling Diagnostics:")
-    print(f"  Initial position ⟨x⟩(0): {positions[0]:.4f} (Left Well)")
-    print(f"  Final position ⟨x⟩(T)  : {positions[-1]:.4f}")
-    print(f"  Number of well crossings detected: {num_crossings}")
+    print(f'Tunneling Diagnostics:')
+    print(f'  Initial position ⟨x⟩(0): {positions[0]:.4f} (Left Well)')
+    print(f'  Final position ⟨x⟩(T)  : {positions[-1]:.4f}')
+    print(f'  Number of well crossings detected: {num_crossings}')
     print("Outputs saved in the 'output/' directory.")
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
