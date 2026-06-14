@@ -4,18 +4,6 @@ A high-performance, modular Python library for numerical quantum mechanics simul
 
 ---
 
-## Simulation Results
-
-### 1. Space-Time Evolution (3D Surface Plot)
-Displays the complete time evolution of the wave packet, showing its propagation, reflection, and quantum tunneling:
-![Space-Time Evolution](quantum_space_time.png)
-
-### 2. Final State Plot (Academic Theme)
-Displays the probability density $|\Psi(x)|^2$ and the real part $\text{Re}(\Psi)$ at the final time step:
-![Final State](quantum_simulation.png)
-
----
-
 ## Key Features
 
 - **Unitary Time-Step Solver**: High-precision split-step solver conserving the total probability norm to machine precision ($< 10^{-12}$).
@@ -34,16 +22,41 @@ Displays the probability density $|\Psi(x)|^2$ and the real part $\text{Re}(\Psi
 
 ## Example Gallery
 
-The framework includes pre-built simulation scripts under the `examples/` directory:
+The framework includes pre-built simulation scripts under the `examples/` directory. Each example generates scientific visualizations:
 
-1. **Gaussian Barrier Scattering (`examples/01_gaussian_barrier.py`)**
-   Propagates a wave packet towards a Gaussian potential barrier, resolving reflection ($R$) and transmission ($T$) coefficients.
-2. **Harmonic Oscillator (`examples/02_harmonic_oscillator.py`)**
-   Simulates a coherent state wave packet oscillating back and forth in a parabolic well, demonstrating exact total energy conservation.
-3. **Double Well Tunneling (`examples/03_double_well.py`)**
-   Illustrates quantum tunneling and wave packet oscillations between two symmetric wells separated by a central potential barrier.
-4. **Multiple Barrier Scattering (`examples/04_multiple_barriers.py`)**
-   Models wave packet splitting and high-frequency interference fringes as the packet scatters off multiple rectangular barriers.
+### 1. Gaussian Barrier Scattering (`examples/01_gaussian_barrier.py`)
+Propagates a wave packet towards a Gaussian potential barrier, resolving reflection ($R$) and transmission ($T$) coefficients.
+
+*   **Final State Plot**:
+    ![Gaussian Barrier Final](images/01_gaussian_barrier_final.png)
+*   **3D Space-Time Surface**:
+    ![Gaussian Barrier Space-Time](images/01_gaussian_barrier_spacetime.png)
+*   **Dual Space Analysis**:
+    ![Gaussian Barrier Dual Space](images/01_gaussian_barrier_dual.png)
+
+### 2. Harmonic Oscillator (`examples/02_harmonic_oscillator.py`)
+Simulates a coherent state wave packet oscillating back and forth in a parabolic well, demonstrating exact total energy conservation.
+
+*   **Final State Plot**:
+    ![Harmonic Oscillator Final](images/02_harmonic_oscillator_final.png)
+*   **3D Space-Time Surface**:
+    ![Harmonic Oscillator Space-Time](images/02_harmonic_oscillator_spacetime.png)
+
+### 3. Double Well Tunneling (`examples/03_double_well.py`)
+Illustrates quantum tunneling and wave packet oscillations between two symmetric wells separated by a central potential barrier.
+
+*   **Final State Plot**:
+    ![Double Well Final](images/03_double_well_final.png)
+*   **3D Space-Time Surface**:
+    ![Double Well Space-Time](images/03_double_well_spacetime.png)
+
+### 4. Multiple Barrier Scattering (`examples/04_multiple_barriers.py`)
+Models wave packet splitting and high-frequency interference fringes as the packet scatters off multiple rectangular barriers.
+
+*   **Final State Plot**:
+    ![Multiple Barriers Final](images/04_multiple_barriers_final.png)
+*   **3D Space-Time Surface**:
+    ![Multiple Barriers Space-Time](images/04_multiple_barriers_spacetime.png)
 
 ---
 
