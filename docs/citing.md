@@ -8,7 +8,7 @@ If you use QuantumLab in your work, please cite it. The repository's **"Cite thi
 @software{quantumlab,
   author  = {Rasidi, Ahmad and Kbro1989},
   title   = {QuantumLab: Quantum Simulation Framework},
-  version = {1.2.0},
+  version = {1.2.1},
   year    = {2026},
   url     = {https://github.com/rasidi3112/quantum-simulation}
 }

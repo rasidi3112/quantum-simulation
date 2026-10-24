@@ -322,7 +322,7 @@ All 17 checks pass. A few rows report something other than a plain error:
 
 ### 1. Install Dependencies
 
-Install QuantumLab in development/editable mode (requires Python ≥ 3.9):
+Install QuantumLab in development/editable mode (requires Python ≥ 3.10):
 
 ```bash
 pip install -e .
@@ -499,7 +499,7 @@ If you use QuantumLab in your work, please cite it. GitHub's **"Cite this reposi
 @software{quantumlab,
   author  = {Rasidi, Ahmad and Kbro1989},
   title   = {QuantumLab: Quantum Simulation Framework},
-  version = {1.2.0},
+  version = {1.2.1},
   year    = {2026},
   url     = {https://github.com/rasidi3112/quantum-simulation}
 }

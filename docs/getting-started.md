@@ -2,7 +2,7 @@
 
 ## Installation
 
-QuantumLab needs Python ≥ 3.9 (tested on 3.10–3.14). Clone the repository and install it in editable mode:
+QuantumLab needs Python ≥ 3.10 and is tested on 3.10–3.14. Clone the repository and install it in editable mode:
 
 ```bash
 git clone https://github.com/rasidi3112/quantum-simulation.git

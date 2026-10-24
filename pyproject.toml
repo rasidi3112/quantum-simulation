@@ -4,24 +4,32 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "quantumlab"
-version = "1.2.0"
-description = "Research-Grade Quantum Simulation Framework solving TDSE in 1D, 2D, and 3D via Split-Step Fourier Method"
+version = "1.2.1"
+description = "Quantum simulation framework: Schrödinger and Gross–Pitaevskii equations in 1D/2D/3D, eigensolvers, rotating BECs, CUDA GPU and 3D rendering"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "MIT"
 authors = [
-    { name = "QuantumLab Core Contributors" }
+    { name = "Ahmad Rasidi" },
+    { name = "Kbro1989" },
+]
+keywords = [
+    "quantum mechanics", "schrodinger equation", "gross-pitaevskii", "bose-einstein condensate",
+    "split-step fourier", "vortex lattice", "computational physics", "gpu",
 ]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
     "Topic :: Scientific/Engineering :: Physics",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
     "numpy>=1.24.0",
@@ -29,6 +37,13 @@ dependencies = [
     "matplotlib>=3.7.0",
     "pyyaml>=6.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/rasidi3112/quantum-simulation"
+Documentation = "https://rasidi3112.github.io/quantum-simulation/"
+Repository = "https://github.com/rasidi3112/quantum-simulation"
+Issues = "https://github.com/rasidi3112/quantum-simulation/issues"
+Changelog = "https://github.com/rasidi3112/quantum-simulation/releases"
 
 [project.optional-dependencies]
 viz3d = [

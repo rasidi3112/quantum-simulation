@@ -14,7 +14,7 @@ authors:
     family-names: Rasidi
     alias: rasidi3112
   - alias: Kbro1989
-version: 1.2.0
+version: 1.2.1
 date-released: "2026-10-24"
 license: MIT
 repository-code: "https://github.com/rasidi3112/quantum-simulation"
